@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sign.html</title>
+</head>
+<body>
+	<fieldset>
+		<legend>회원가입</legend>
+		<form action="/sign" method="post">
+		<label> 
+			<input type="text" 
+				   placeholder="아이디"
+				   name = "id"/>
+		</label> <br>
+		<label> 
+			<input id="password"
+				   type="password" 
+				   placeholder="비밀번호"
+				   name ="password"
+				   />
+		</label> <br>
+		<label> 
+			<!-- 
+				키보드로 실시간 입력한 값을 확인을 
+				할 때는 onkeyup
+				단점 : 마우스로 복붙하거나 모바일
+				     입력은 놓칠 수있음!
+				     실무에서는 가장 많이 쓰는 타입
+				     oninput - 모든 순간을 감지함
+			 -->
+			<input id = "passwordCheck"
+				   type="password" 
+				   placeholder="비밀번호 확인"
+				   oninput="checkPassword()"/>
+		</label>
+		<span id="pwMessage"></span>
+		<br>
+		<label> 
+			<input type="text" 
+				   placeholder="이름"
+				   name = "name"/>
+		</label> <br>
+		<label> 
+			<input type="email" 
+				   placeholder="email@google.com"
+				   name = "email"/>
+		</label><br>
+		<label> 
+			<input type="text" 
+				   placeholder="휴대폰"
+				   name = "phone"/>
+		</label> <br>
+		<label> 
+			<input type="text" 
+				   placeholder="주소"
+				   name = "addr"/>
+		</label><br>
+			<button type="submit">회원가입</button> 
+		</form>
+
+	</fieldset>
+	
+	
+	<script src="/js/sign.js"></script>
+	
+</body>
+</html>

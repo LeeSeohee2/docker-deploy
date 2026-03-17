@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>수정페이지!</title>
+</head>
+<body>
+	<fieldset>
+		<legend>수정하기</legend>
+		<form action="/update" method="post">
+		<label> 
+			<input type="text" 
+				   placeholder="아이디"
+				   name = "id"
+				   readonly
+				   th:value="${user.id}"/>
+		</label> <br>
+		<label> 
+			<input type="text" 
+				   placeholder="이름"
+				   name = "name"
+				   th:value="${user.name}"/>
+		</label> <br>
+		<label> 
+			<input type="email" 
+				   placeholder="email@google.com"
+				   name = "email"
+				   th:value="${user.email}"/>
+		</label><br>
+		<label> 
+			<input type="text" 
+				   placeholder="휴대폰"
+				   name = "phone"
+				   th:value="${user.phone}"/>
+		</label> <br>
+		<label> 
+			<input type="text" 
+				   placeholder="주소"
+				   name = "addr"
+				   th:value="${user.addr}"/>
+		</label><br>
+		<!-- 수정을 할 때는 save()메서드가 no가 있는지 없는지
+		에 따라서 insert, update를 하기 때문에 수정할 때는 
+		안보이게 전송시 no값을(PK)값을 넘겨준다!  -->
+			<input type="hidden" 
+				   th:value=${user.no}
+				   name="no"/>
+			<button type="submit">수정 하기</button> 
+		</form>
+
+	</fieldset>
+</body>
+</html>

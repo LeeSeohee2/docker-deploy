@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원 목록</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div class="container">
+		<h2>회원 목록 조회</h2>
+		<table class="table table-striped">
+			<tr>
+				<th>NO</th>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+				<th>PHONE</th>
+				<th>ADDR</th>	
+			</tr>
+			<!-- DB에서 회원전체 목록을 조회해서
+				 아래 행을 반복하면서 출력하기! -->
+			<tr th:each="user : ${userList}">
+				<td th:text="${user.no}"></td>
+				<td th:text="${user.id}"
+					th:onclick= "|goDetail(${user.no})|"
+					style="cursor : pointer;"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.phone}"></td>
+				<td th:text="${user.addr}"></td>	
+			</tr>	
+		
+		</table>
+	
+	</div>	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script src="/js/sign.js"></script>
+</body>
+</html>
